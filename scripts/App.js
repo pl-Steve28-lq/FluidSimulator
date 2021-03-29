@@ -48,8 +48,11 @@ class App extends BaseCanvasApp {
         this.ctx.beginPath()
         this.ctx.rect(x, y, pixelSize, pixelSize)
         let clr = 255*Math.min(1, this.f.density[i]/100)
-        this.ctx.fillStyle = RGB(clr, clr, clr)
+        let color = RGB(clr, clr, clr)
+        this.ctx.fillStyle = color
+        this.ctx.strokeStyle = color
         this.ctx.fill()
+        this.ctx.stroke()
         i += 1
       }
     }
